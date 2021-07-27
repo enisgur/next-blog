@@ -13,17 +13,12 @@
 }
 
 .main-blog .bundle-posts .post-head-title {
-	font-family: nunito-bold, sans-serif;
+	font-family: $fmly-font-nunito;
 	font-size: 40px;
 	margin: 10px 0;
 	text-align: center;
-	background-color: #f3ec78;
-	background-image: linear-gradient(45deg, #575276, #af4261);
-	background-size: 100%;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
+
+	@include linearMain-text();
 }
 
 /* slider */
@@ -71,20 +66,14 @@
 	}
 
 	.post-title {
-		font-family: nunito-bold, sans-serif;
+		font-family: $fmly-font-nunito;
 		font-size: 24px;
 		height: 35px;
 		max-height: 35px;
 		min-height: 35px;
 		margin: 20px 0 10px;
 		text-align: center;
-		background-color: #f3ec78;
-		background-image: linear-gradient(45deg, #575276, #af4261);
-		background-size: 100%;
-		-webkit-background-clip: text;
-		-moz-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		-moz-text-fill-color: transparent;
+		@include linearMain-text();
 	}
 
 	@import "./sliderpost/index";

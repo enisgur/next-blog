@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
 // import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
 // import Img from "next/image";
@@ -55,15 +57,15 @@ function MainBlog({ posts, title }) {
               <SwiperSlide key={post.id} className="slider-post">
                 {/* <Img width={100} height={100} src={post.img} alt="post image" /> */}
                 <img src={post.img} alt="post image" />
-                <a href="#!" className="post-title">
-                  {post.title}
-                </a>
+                <Link href={`/post/${post.id}`}>
+                  <a className="post-title">{post.title}</a>
+                </Link>
                 <hr className="post-hr" />
-                <p className="post-details">{post.detail}</p>
+                <p className="post-details">{post.subTitle}</p>
                 <div className="action-buttons">
-                  <a className="readmore" href="#!">
-                    Read more
-                  </a>
+                  <Link href={`/post/${post.id}`}>
+                    <a className="readmore">Read more</a>
+                  </Link>
                 </div>
               </SwiperSlide>
             );

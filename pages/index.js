@@ -2,7 +2,7 @@ import Head from "next/head";
 // import Image from "next/image";
 // import dynamic from "next/dynamic";
 
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 
 import Header from "../components/pages/Header";
 import MainBlog from "../components/pages/MainBlog";
@@ -20,7 +20,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // // install Swiper modules
 // SwiperCore.use([Pagination]);
 
-export default function Home({ posts }) {
+export default function HomeBlog({ posts }) {
   return (
     // <div className={styles.container}>
     <div>
