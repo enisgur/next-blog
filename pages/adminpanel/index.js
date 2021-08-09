@@ -7,20 +7,25 @@ import dynamic from "next/dynamic";
 // https://github.com/jpuri/react-draft-wysiwyg/issues/893
 // https://github.com/jpuri/react-draft-wysiwyg/issues/893
 
+// https://github.com/react-hook-form/react-hook-form/discussions/1764
+// https://github.com/react-hook-form/react-hook-form/discussions/1764
+
 // import { Editor } from 'react-draft-wysiwyg';
+// const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor));
+// const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor),{ ssr: false });
+
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import Header from "../../components/pages/Header";
 
 export default function AdminHome({ posts }) {
 
-const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor));
+    const Editor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor),{ ssr: false });
 
-const [dataEditor, setDataEditor] = useState();
+const [dataEditor, setDataEditor] = useState({});
 
-const onEditorStateChange = (e, editorState) => {
-    e.preventDefault();
-    setDataEditor(editorState);
+const onEditorStateChange = (editorState) => {
+    setDataEditor({editorState});
     console.log(dataEditor)
 }
   return (
